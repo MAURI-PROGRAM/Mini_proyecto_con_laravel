@@ -81,16 +81,13 @@
                 <div class="title m-b-md">
                     Pagina de contacto
                 </div>
-                {{$date}}
-
                 @foreach($notes as $note)
                     <h2>{{$note['title']}}
-                    @if ($note['important'])
+                    @if ($note['import'])
                         *
                     @endif</h2>
                     <p>{{$note['body']}}</p>
                 @endforeach
-
             </div>
         </div>
     </body>
