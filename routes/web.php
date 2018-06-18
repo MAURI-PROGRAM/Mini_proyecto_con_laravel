@@ -36,7 +36,7 @@ Route::get('/arreglos', function () {
 
 Route::get('/bases','NotesController@index');
 
-Route::get('/notes/{id}','NotesController@show');
+Route::get('/notes/{note}','NotesController@show');
 
 Route::get('/json', function () {
 	$notes=DB::table('notes')->get();

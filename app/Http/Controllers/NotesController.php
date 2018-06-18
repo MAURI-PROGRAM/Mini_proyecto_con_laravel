@@ -11,9 +11,7 @@ class NotesController extends Controller
     	$notes=notes::all();
     	return view('notes/database',['notes'=>$notes]);
     }
-    public function show($id){
-		// $note=DB::table('notes')->find($id);
-		$note=notes::find($id);
+    public function show(notes $note){
 	    return view('notes/show',['note'=>$note]);
     }
 }
