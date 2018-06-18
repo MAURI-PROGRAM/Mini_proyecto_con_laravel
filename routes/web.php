@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\notes;
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,17 +34,9 @@ Route::get('/arreglos', function () {
     return view('contactos',['notes'=>$notes,'date'=>$date]);
 });
 
-Route::get('/bases', function () {
-	// $notes=DB::table('notes')->get();
-	$notes=App\notes::all();
-    return view('notes/database',['notes'=>$notes]);
-});
+Route::get('/bases','NotesController@index');
 
-Route::get('/notes/{id}', function ($id) {
-	// $note=DB::table('notes')->find($id);
-	$note=App\notes::find($id);
-    return view('notes/show',['note'=>$note]);
-});
+Route::get('/notes/{id}','NotesController@show');
 
 Route::get('/json', function () {
 	$notes=DB::table('notes')->get();
