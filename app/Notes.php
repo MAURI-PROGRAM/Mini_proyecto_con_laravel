@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Notes extends Model
 {
+	protected $fillable=['title','body','important'];
     //
     public function isImportant(){
-    	return $this->import==1;
+    	return $this->important==1;
     }
 }
