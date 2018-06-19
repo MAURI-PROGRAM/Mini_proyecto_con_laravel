@@ -7,7 +7,7 @@
 <body>
 	<div>
 		@foreach($notes as $note)
-			<a href="notes/{{$note->id}}">{{$note->title}}{{($note->import)?'*':''}}</a>
+			<a href="notes/{{$note->id}}">{{$note->title}}{{($note->important)?'*':''}}</a>
 			<br>
         @endforeach
 	</div>

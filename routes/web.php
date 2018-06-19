@@ -34,9 +34,15 @@ Route::get('/arreglos', function () {
     return view('contactos',['notes'=>$notes,'date'=>$date]);
 });
 
-Route::get('/bases','NotesController@index');
+Route::get('/notes','NotesController@index');
+
+Route::post('/notes','NotesController@store');
+
+Route::get('/notes/create','NotesController@create');
 
 Route::get('/notes/{note}','NotesController@show');
+
+
 
 Route::get('/json', function () {
 	$notes=DB::table('notes')->get();

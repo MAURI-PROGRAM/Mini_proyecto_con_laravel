@@ -5,7 +5,8 @@
 	<title>Document</title>
 </head>
 <body>
-	<h1>ALLL</h1>
+	@yield('title','<h1>ALLL</h1>')
+	
 	@yield('content')
 
 </body>
